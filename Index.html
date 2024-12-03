@@ -3,14 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Website Statis</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Informasi Akses</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 20px;
+      }
+      .info {
+        display: inline-block;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      a {
+        color: #007bff;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
   </head>
   <body>
-    <h1>Selamat Datang di Website</h1>
-    <p>Hostname Server: <span id="hostname"></span></p>
-    <p>Alamat IP Anda: <span id="ip-address"></span></p>
-    <p>Waktu Akses: <span id="acces-time"></span></p>
-    <script src="script.js"></script>
+    <div class="info">
+      <h1>Informasi Akses</h1>
+      <p>
+        <strong>Hostname Server:</strong>
+        <?php echo gethostname(); ?>
+      </p>
+      <p>
+        <strong>IP Client:</strong>
+        <?php echo $_SERVER['REMOTE_ADDR']; ?>
+      </p>
+      <p>
+        <strong>Waktu Akses:</strong>
+        <?php echo date('Y-m-d H:i:s'); ?>
+      </p>
+    </div>
   </body>
 </html>
